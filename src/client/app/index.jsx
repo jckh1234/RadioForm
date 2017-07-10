@@ -1,14 +1,13 @@
 import "babel-polyfill";
 import React from 'react';
-import {render} from 'react-dom';
-
-
+import ReactDOM from 'react-dom';
 import mountingDomID from 'mountingDomID';
 import store from 'store';
-
 import Content from './Content.jsx';
 import TablePanelList from './TablePanelList.jsx';
 
+// new component
+import EditPanel from './components/EditPanel.jsx';
 
 const submissionOptions = 
 	[
@@ -37,18 +36,13 @@ class Form extends React.Component {
 
 	}
 
-    render () {
-
+    render() {
         return (
-
-		  	<div style={{fontFamily:'Tahoma'}}>
-
+            <div style={{ fontFamily: 'Tahoma' }}>
+                <EditPanel title="For CME" selected={false} />
 		  		<Content store={this.props.store} submissionOptions={this.state.submissionOptions} page={this.state.page}/>
-
 			</div>
-			 
         );
-
     }
 
 	componentDidMount(){
@@ -114,7 +108,8 @@ class UserInfo extends React.Component {
 	}
 }
 
-render(<UserInfo store={store}/>, document.getElementById(mountingDomID.userInfoID));
-render(<Form store={store}/>, document.getElementById(mountingDomID.formID));
+//ReactDOM.render(<HelloWorld />, document.getElementById("userInfoID"));
+ReactDOM.render(<UserInfo store={store}/>, document.getElementById(mountingDomID.userInfoID));
+ReactDOM.render(<Form store={store}/>, document.getElementById(mountingDomID.formID));
 	
 

@@ -86,8 +86,6 @@ function reducer(state, actions){
 
   switch (actions.type) {
 
-
-
   	case "ReloadData":
 
           //reinitialize tables

@@ -17,14 +17,19 @@ var config = {
     loaders : [
       {
         test : /\.jsx?/,
-        include : APP_DIR,
-        loader : 'babel-loader'
+        include: APP_DIR,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+            presets:['react','es2015']
+        }
+
       },
       { 
         test: /\.css$/, 
         loader: "style-loader!css-loader" 
       }
-    ],
+    ]
   },
     externals: {
       'store': 'store',

@@ -1,6 +1,4 @@
 import React from 'react';
-import {render} from 'react-dom';
-
 import PlanTableHeader from './PlanTableHeader.jsx';
 import PlanTableRow from './PlanTableRow.jsx'
 
